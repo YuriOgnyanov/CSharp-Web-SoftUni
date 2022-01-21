@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wFg56V6cAkYR7HpNTWNoqhMYbT2YjYhOiaHhJmuAL9Wjda/fJoHA2OJwQW21KaHUarJzZ91m9KYaKHf7mT3q4g==",
+  "dgSpecHash": "f2p5lU9udWT33vl+dZmjjh8j9KOJzf38dyROV892vyZat/6v69p9bwJPGoKqyu9C+RZ2QeHc9GRnwIcJdUOdvg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yurio\\OneDrive\\Desktop\\HttpServer\\BasicWebServer.Server\\BasicWebServer.Server.csproj",
+  "projectFilePath": "C:\\Users\\yurio\\OneDrive\\Documents\\GitHub\\CSharp-Web-SoftUni\\HttpServer\\BasicWebServer.Server\\BasicWebServer.Server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

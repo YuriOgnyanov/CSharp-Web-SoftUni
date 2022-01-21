@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yurio\\OneDrive\\Desktop\\HttpServer\\BasicWebServer.Demo\\BasicWebServer.Demo.csproj",
+      "projectUniqueName": "C:\\Users\\yurio\\OneDrive\\Documents\\GitHub\\CSharp-Web-SoftUni\\HttpServer\\BasicWebServer.Demo\\BasicWebServer.Demo.csproj",
       "projectName": "BasicWebServer.Demo",
-      "projectPath": "C:\\Users\\yurio\\OneDrive\\Desktop\\HttpServer\\BasicWebServer.Demo\\BasicWebServer.Demo.csproj",
+      "projectPath": "C:\\Users\\yurio\\OneDrive\\Documents\\GitHub\\CSharp-Web-SoftUni\\HttpServer\\BasicWebServer.Demo\\BasicWebServer.Demo.csproj",
       "packagesPath": "C:\\Users\\yurio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yurio\\OneDrive\\Desktop\\HttpServer\\BasicWebServer.Demo\\obj\\",
+      "outputPath": "C:\\Users\\yurio\\OneDrive\\Documents\\GitHub\\CSharp-Web-SoftUni\\HttpServer\\BasicWebServer.Demo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yurio\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\yurio\\OneDrive\\Desktop\\HttpServer\\BasicWebServer.Server\\BasicWebServer.Server.csproj": {
-              "projectPath": "C:\\Users\\yurio\\OneDrive\\Desktop\\HttpServer\\BasicWebServer.Server\\BasicWebServer.Server.csproj"
+            "C:\\Users\\yurio\\OneDrive\\Documents\\GitHub\\CSharp-Web-SoftUni\\HttpServer\\BasicWebServer.Server\\BasicWebServer.Server.csproj": {
+              "projectPath": "C:\\Users\\yurio\\OneDrive\\Documents\\GitHub\\CSharp-Web-SoftUni\\HttpServer\\BasicWebServer.Server\\BasicWebServer.Server.csproj"
             }
           }
         }
