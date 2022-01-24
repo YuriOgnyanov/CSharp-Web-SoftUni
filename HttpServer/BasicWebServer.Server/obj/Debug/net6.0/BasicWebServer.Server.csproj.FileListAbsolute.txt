@@ -1,15 +1,3 @@
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\bin\Debug\net6.0\BasicWebServer.Server.deps.json
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\bin\Debug\net6.0\BasicWebServer.Server.dll
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\bin\Debug\net6.0\ref\BasicWebServer.Server.dll
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\bin\Debug\net6.0\BasicWebServer.Server.pdb
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\obj\Debug\net6.0\BasicWebServer.Server.csproj.AssemblyReference.cache
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\obj\Debug\net6.0\BasicWebServer.Server.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\obj\Debug\net6.0\BasicWebServer.Server.AssemblyInfoInputs.cache
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\obj\Debug\net6.0\BasicWebServer.Server.AssemblyInfo.cs
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\obj\Debug\net6.0\BasicWebServer.Server.csproj.CoreCompileInputs.cache
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\obj\Debug\net6.0\BasicWebServer.Server.dll
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\obj\Debug\net6.0\ref\BasicWebServer.Server.dll
-C:\Users\yurio\OneDrive\Desktop\HttpServer\BasicWebServer.Server\obj\Debug\net6.0\BasicWebServer.Server.pdb
 C:\Users\yurio\OneDrive\Documents\GitHub\CSharp-Web-SoftUni\HttpServer\BasicWebServer.Server\bin\Debug\net6.0\BasicWebServer.Server.deps.json
 C:\Users\yurio\OneDrive\Documents\GitHub\CSharp-Web-SoftUni\HttpServer\BasicWebServer.Server\bin\Debug\net6.0\BasicWebServer.Server.dll
 C:\Users\yurio\OneDrive\Documents\GitHub\CSharp-Web-SoftUni\HttpServer\BasicWebServer.Server\bin\Debug\net6.0\ref\BasicWebServer.Server.dll

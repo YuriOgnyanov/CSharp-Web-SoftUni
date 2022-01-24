@@ -1,4 +1,5 @@
-﻿using BasicWebServer.Server.HTTP.Enums;
+﻿using BasicWebServer.Server.HTTP.Cookies;
+using BasicWebServer.Server.HTTP.Enums;
 using BasicWebServer.Server.HTTP.Headers;
 using BasicWebServer.Server.HTTP.Requests;
 using System.Text;
@@ -17,6 +18,7 @@ namespace BasicWebServer.Server.HTTP.Responses
 
         public StatusCode StatusCode { get; init; }
         public HeaderCollection Headers { get; } = new HeaderCollection();
+        public CookieCollection Cookies { get; } = new CookieCollection();
         public string Body { get; set; }
         public Action<Request, Response> PreRenderAction { get; protected set; }
 
@@ -29,6 +31,11 @@ namespace BasicWebServer.Server.HTTP.Responses
             foreach (var header in this.Headers)
             {
                 result.AppendLine(header.ToString());
+            }
+
+            foreach (var cookie in this.Cookies)
+            {
+                result.AppendLine($"{Header.SetCookie}: {cookie}");
             }
 
             result.AppendLine();

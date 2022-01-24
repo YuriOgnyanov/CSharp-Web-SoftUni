@@ -10,7 +10,7 @@ namespace BasicWebServer.Server.HTTP.Headers
         public HeaderCollection() 
             => this.headers = new Dictionary<string, Header>();
 
-        public  string this[string name]
+        public string this[string name]
             => this.headers[name].Value;
 
         public int Count => this.headers.Count;
@@ -19,7 +19,7 @@ namespace BasicWebServer.Server.HTTP.Headers
             => this.headers.ContainsKey(name);
 
         public void Add(string name, string value)
-            => this.headers[name] = new Header(name, value);
+            => this.headers[name] = new Header(name, value);    
 
         public IEnumerator<Header> GetEnumerator() 
             => this.headers.Values.GetEnumerator();
