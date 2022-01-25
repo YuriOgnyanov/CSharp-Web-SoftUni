@@ -2,11 +2,7 @@
 using BasicWebServer.Server.HTTP.Cookies;
 using BasicWebServer.Server.HTTP.Enums;
 using BasicWebServer.Server.HTTP.Headers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BasicWebServer.Server.HTTP.Sessions;
 using System.Web;
 
 namespace BasicWebServer.Server.HTTP.Requests
@@ -18,7 +14,13 @@ namespace BasicWebServer.Server.HTTP.Requests
         public HeaderCollection Headers { get; private set; }
         public CookieCollection Cookies { get; private set; }
         public string Body { get; private set; }
+        public Session Session { get; private set; }
         public IReadOnlyDictionary<string, string> Form { get; private set; }
+
+        private static Dictionary<string, Session> Sessions = new();
+        
+
+
 
         public static Request Parse(string request)
         {
@@ -35,6 +37,8 @@ namespace BasicWebServer.Server.HTTP.Requests
 
             var cookies = ParseCookies(headers);
 
+            var session = GetSession(cookies);
+
             var bodyLines = lines.Skip(headers.Count + 2)
                 .ToArray();
 
@@ -49,8 +53,23 @@ namespace BasicWebServer.Server.HTTP.Requests
                 Headers = headers,
                 Cookies = cookies,
                 Body = body,
+                Session = session,
                 Form = form
             };
+        }
+
+        private static Session GetSession(CookieCollection cookies)
+        {
+            var sessionId = cookies.Contains(Session.SessionCookieName)
+                ? cookies[Session.SessionCookieName]
+                :Guid.NewGuid().ToString();
+
+            if (!Sessions.ContainsKey(sessionId))
+            {
+                Sessions[sessionId] = new Session(sessionId);
+            }
+
+            return Sessions[sessionId];
         }
 
         private static CookieCollection ParseCookies(HeaderCollection headers)

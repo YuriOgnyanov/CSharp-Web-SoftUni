@@ -1,5 +1,6 @@
 ﻿using BasicWebServer.Server.HTTP.Requests;
 using BasicWebServer.Server.HTTP.Responses;
+using BasicWebServer.Server.HTTP.Sessions;
 using BasicWebServer.Server.Routing;
 using BasicWebServer.Server.Routing.Contract;
 using System;
@@ -17,6 +18,7 @@ namespace BasicWebServer.Server
         private readonly int port;
         private readonly TcpListener serverListener;
         private readonly RoutingTable routingTable;
+        
 
         public HttpServer(string ipAddress, int port, Action<IRoutingTable> routingTableConfiguration)
         {
@@ -92,11 +94,27 @@ namespace BasicWebServer.Server
                         response.PreRenderAction(request, response);
                     }
 
+                    AddSession(request, response);
+
                     await WriteResponse(networkStream, response);
 
                     connection.Close();
                 });
 
+            }
+        }
+
+        private static void AddSession(Request request, Response response)
+        {
+            var sessionExists = request.Session
+                .Contains(Session.SessionCurrentDateKey); // ???????????????
+
+            if (!sessionExists) 
+            {
+                request.Session[Session.SessionCurrentDateKey]
+                    = DateTime.Now.ToString();
+                response.Cookies
+                    .Add(Session.SessionCookieName, request.Session.Id);
             }
         }
 

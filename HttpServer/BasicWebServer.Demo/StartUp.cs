@@ -1,6 +1,7 @@
 ﻿using BasicWebServer.Server;
 using BasicWebServer.Server.HTTP.Requests;
 using BasicWebServer.Server.HTTP.Responses;
+using BasicWebServer.Server.HTTP.Sessions;
 using BasicWebServer.Server.Responses;
 using System.Text;
 using System.Web;
@@ -31,14 +32,36 @@ Age: <input type='number' name ='Age'/>
             .MapPost("/HTML", new TextResponse("", StartUp.AddFormDataAction))
             .MapGet("/Content", new HtmlResponse(StartUp.DownloadForm))
             .MapPost("/Content", new TextFileResponse(StartUp.FileName))
-            .MapGet("/Cookies", new HtmlResponse("", StartUp.AddCookiesAction)));
+            .MapGet("/Cookies", new HtmlResponse("", StartUp.AddCookiesAction))
+            .MapGet("/Session", new TextResponse("", StartUp.DisplaySessionInfoAction)));
             
         await server.Start();
     }
 
+    private static void DisplaySessionInfoAction(Request request, Response response)
+    {
+        var sessionExists = request.Session
+            .Contains(Session.SessionCurrentDateKey);
+
+        var bodyText = string.Empty;
+
+        if(sessionExists) 
+        {
+            var currentDate = request.Session[Session.SessionCurrentDateKey];
+            bodyText = $"Stored date: {currentDate}!";
+        }
+        else
+        {
+            bodyText = "Current date stored!";
+        }
+
+        response.Body = "";
+        response.Body += bodyText;
+    }
+
     private static void AddCookiesAction(Request request, Response response) 
     {
-        var requestHasCookies = request.Cookies.Any();
+        var requestHasCookies = request.Cookies.Any(c => c.Name != Session.SessionCookieName);
         var bodyText = string.Empty;
 
         if (requestHasCookies) 

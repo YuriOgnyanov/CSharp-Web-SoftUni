@@ -9,6 +9,7 @@ namespace BasicWebServer.Server.HTTP.Cookies
         public CookieCollection()
             => this.cookies = new Dictionary<string, Cookie>();
 
+        
         public string this[string name]
             => this.cookies[name].Value;
 
