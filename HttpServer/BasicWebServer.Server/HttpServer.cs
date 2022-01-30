@@ -3,9 +3,6 @@ using BasicWebServer.Server.HTTP.Responses;
 using BasicWebServer.Server.HTTP.Sessions;
 using BasicWebServer.Server.Routing;
 using BasicWebServer.Server.Routing.Contract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -121,6 +118,12 @@ namespace BasicWebServer.Server
         private async Task WriteResponse(NetworkStream networkStream, Response response)
         {
             var responseBytes = Encoding.UTF8.GetBytes(response.ToString());
+
+            if (response.FileContent != null)
+            {
+                responseBytes = responseBytes.Concat(response.FileContent)
+                    .ToArray();
+            }
 
             await networkStream.WriteAsync(responseBytes);
         }

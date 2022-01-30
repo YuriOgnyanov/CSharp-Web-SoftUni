@@ -9,22 +9,24 @@ using System.Threading.Tasks;
 
 namespace BasicWebServer.Server.HTTP.Responses
 {
-    public class TextFileResponse : Response
+    public class FileResponse : Response
     {
         public string FileName { get; init; }
-        public TextFileResponse(string fileName) 
+        public FileResponse(string fileName) 
             : base(StatusCode.OK)
         {
             this.FileName = fileName;
 
-            this.Headers.Add(Header.ContentType, ContentType.PlaintText);
+            this.Headers.Add(Header.ContentType, ContentType.FileContent);
         }
 
         public override string ToString()
         {
             if (File.Exists(this.FileName))
             {
-                this.Body = File.ReadAllTextAsync(this.FileName).Result;
+                this.Body = String.Empty;
+                
+                FileContent = File.ReadAllBytes(this.FileName);
 
                 var fileBytesCount = new FileInfo(this.FileName).Length;
                 this.Headers.Add(Header.ContentLength, fileBytesCount.ToString());

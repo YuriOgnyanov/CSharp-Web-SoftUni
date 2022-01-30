@@ -18,7 +18,7 @@ Age: <input type='number' name ='Age'/>
  <input type='submit' value ='Download Sites Content' />  
 </form>";
 
-    private const string FileName = "conntent.txt";
+    private const string FileName = "content.txt";
 
     private const string LoginForm = @"<form action='/Login' method='POST'> 
    Username: <input type='text' name='Username'/> 
@@ -31,8 +31,8 @@ Age: <input type='number' name ='Age'/>
 
     public static async Task Main()
     {
-        await DownloadSitesAsTextFile(StartUp.FileName
-            , new string[] { "https://judge.softuni.org/", "https://softuni.org/" });
+        //await DownloadSitesAsTextFile(StartUp.FileName
+        //    , new string[] { "https://judge.softuni.org/", "https://softuni.org/" });
 
         var server = new HttpServer(routes => routes
             .MapGet("/", new TextResponse("Hello from the server!"))
@@ -40,7 +40,7 @@ Age: <input type='number' name ='Age'/>
             .MapGet("/HTML", new HtmlResponse(StartUp.HtmlForm))
             .MapPost("/HTML", new TextResponse("", StartUp.AddFormDataAction))
             .MapGet("/Content", new HtmlResponse(StartUp.DownloadForm))
-            .MapPost("/Content", new TextFileResponse(StartUp.FileName))
+            .MapPost("/Content", new FileResponse(StartUp.FileName))
             .MapGet("/Cookies", new HtmlResponse("", StartUp.AddCookiesAction))
             .MapGet("/Session", new TextResponse("", StartUp.DisplaySessionInfoAction))
             .MapGet("/Login", new HtmlResponse(StartUp.LoginForm))
