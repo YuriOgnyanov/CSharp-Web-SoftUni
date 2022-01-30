@@ -13,10 +13,10 @@ namespace BasicWebServer.Server.Routing
 
         public RoutingTable() => this.routes = new()
         {
-            [Method.Get] = new(),
-            [Method.Post] = new(),
-            [Method.Put] = new(),
-            [Method.Delete] = new(),
+            [Method.Get] = new(StringComparer.CurrentCultureIgnoreCase),
+            [Method.Post] = new(StringComparer.CurrentCultureIgnoreCase),
+            [Method.Put] = new(StringComparer.CurrentCultureIgnoreCase),
+            [Method.Delete] = new(StringComparer.CurrentCultureIgnoreCase),
         };
         public IRoutingTable Map(string url, Method method, Response response)
             => method switch
