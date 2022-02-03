@@ -1,11 +1,6 @@
 ﻿using BasicWebServer.Server.HTTP.Content;
 using BasicWebServer.Server.HTTP.Enums;
 using BasicWebServer.Server.HTTP.Headers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicWebServer.Server.HTTP.Responses
 {
